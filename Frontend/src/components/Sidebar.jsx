@@ -1,14 +1,36 @@
+/* eslint-disable react/prop-types */
 import { Button } from "@/components/ui/button";
-import { BarChart2, Home, Settings, HelpCircle, LogOut } from "lucide-react";
+import {
+  BarChart2,
+  Home,
+  Settings,
+  HelpCircle,
+  LogOut,
+  Sun,
+  Moon,
+} from "lucide-react";
+import { useTheme } from "../context/ThemeContext";
 
-// eslint-disable-next-line react/prop-types
-function Sidebar({ activeTab, setActiveTab }) {
+export default function Sidebar({ activeTab, setActiveTab }) {
+  const { darkMode, toggleDarkMode } = useTheme(); 
   return (
-    <aside className="w-64 bg-white shadow-md">
+    <aside
+      className={`w-64 ${darkMode ? "bg-gray-800" : "bg-white"} shadow-md`}
+    >
       <div className="p-4">
         <div className="flex items-center mb-6">
-          <BarChart2 className="h-6 w-6 mr-2 text-purple-600" />
-          <span className="font-bold text-xl">TicketMaster</span>
+          <BarChart2
+            className={`h-6 w-6 mr-2 ${
+              darkMode ? "text-yellow-400" : "text-purple-600"
+            }`}
+          />
+          <span
+            className={`font-bold text-xl ${
+              darkMode ? "text-white" : "text-black"
+            }`}
+          >
+            TicketMaster
+          </span>
         </div>
         <nav>
           <Button
@@ -43,6 +65,18 @@ function Sidebar({ activeTab, setActiveTab }) {
             <HelpCircle className="mr-2 h-4 w-4" />
             Help & Support
           </Button>
+          <Button
+          variant="ghost"
+          className="w-full justify-start"
+          onClick={toggleDarkMode}
+        >
+          {darkMode ? (
+            <Sun className="mr-2 h-4 w-4" />
+          ) : (
+            <Moon className="mr-2 h-4 w-4" />
+          )}
+          {darkMode ? "Light Mode" : "Dark Mode"}
+        </Button>
         </nav>
       </div>
       <div className="absolute bottom-4 left-4">
@@ -54,5 +88,3 @@ function Sidebar({ activeTab, setActiveTab }) {
     </aside>
   );
 }
-
-export default Sidebar;

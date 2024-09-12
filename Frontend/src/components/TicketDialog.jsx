@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { Button } from "@/components/ui/button";
+import { Button } from "./ui/button";
 import {
   Dialog,
   DialogContent,
@@ -7,23 +7,22 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/dialog";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
+} from "./ui/dialog";
+import { Input } from "./ui/input";
+import { Label } from "./ui/label";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select";
+} from "./ui/select";
 
 function TicketDialog({ ticket, onViewDetails }) {
   return (
     <Dialog>
       <DialogTrigger asChild>
         <Button
-          variant="outline"
           size="sm"
           onClick={() => onViewDetails(ticket)}
         >
@@ -71,7 +70,7 @@ function TicketDialog({ ticket, onViewDetails }) {
               </Label>
               <Input
                 id="priority"
-                value={ticket.difficulty}
+                value={ticket.difficultyLevel}
                 className="col-span-3"
                 readOnly
               />

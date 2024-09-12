@@ -19,8 +19,8 @@ function DeleteDialog() {
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
-        <Button variant="outline" className="hover:bg-red-100">
-          <Trash2 color="red" />
+        <Button className="hover:bg-red-100">
+          <Trash2 color="red" size={16} />
         </Button>
       </DialogTrigger>
       <DialogContent>

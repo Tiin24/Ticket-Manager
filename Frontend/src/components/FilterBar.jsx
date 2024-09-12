@@ -1,12 +1,14 @@
 /* eslint-disable react/prop-types */
-import { Input } from "@/components/ui/input";
+import { Input } from "./ui/input";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select";
+} from "./ui/select";
+import CreateDialog from "./CreateDialog";
+import { useTheme } from "../context/ThemeContext";
 
 function FilterBar({
   searchTerm,
@@ -14,8 +16,9 @@ function FilterBar({
   statusFilter,
   setStatusFilter,
 }) {
+  const { darkMode } = useTheme();
   return (
-    <div className="flex gap-4 mb-6">
+    <div className={`flex gap-4 mb-6 ${darkMode ? "bg-gray-900" : "bg-white"}`}>
       <Input
         placeholder="Search tickets..."
         value={searchTerm}
@@ -29,10 +32,11 @@ function FilterBar({
         <SelectContent>
           <SelectItem value="all">All Statuses</SelectItem>
           <SelectItem value="open">Open</SelectItem>
-          <SelectItem value="in_progress">In Progress</SelectItem>
+          <SelectItem value="in_progres">In Progress</SelectItem>
           <SelectItem value="closed">Closed</SelectItem>
         </SelectContent>
       </Select>
+      <CreateDialog/>
     </div>
   );
 }

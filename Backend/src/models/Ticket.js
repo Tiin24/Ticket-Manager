@@ -2,7 +2,7 @@ import { DataTypes } from "sequelize";
 import { sequelize } from "../config/database.js";
 
 export const Ticket = sequelize.define("Ticket", {
-  name: {
+  title: {
     type: DataTypes.STRING,
     allowNull: false,
   },
@@ -19,8 +19,15 @@ export const Ticket = sequelize.define("Ticket", {
     allowNull: false,
   },
   status: {
-    type: DataTypes.ENUM("open", "in_progres","closed"),
+    type: DataTypes.ENUM("open", "in_progres", "closed"),
     allowNull: false,
     defaultValue: "open",
+  },
+  createdAt: {
+    type: DataTypes.DATE,
+    get() {
+      const rawValue = this.getDataValue("createdAt");
+      return rawValue ? rawValue.toISOString().split("T")[0] : null;
+    },
   },
 });

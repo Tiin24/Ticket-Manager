@@ -3,9 +3,9 @@ import { getGifForDifficulty } from "../services/giphyService.js";
 
 export const createTicket = async (req, res) => {
   try {
-    const { name, description, difficultyLevel, status } = req.body;
+    const { title, description, difficultyLevel, status } = req.body;
 
-    if (!name || !description || !difficultyLevel) {
+    if (!title || !description || !difficultyLevel) {
       return res
         .status(400)
         .json({ error: "Todos los campos son obligatorios" });
@@ -14,7 +14,7 @@ export const createTicket = async (req, res) => {
     const gifUrl = await getGifForDifficulty(difficultyLevel);
 
     const ticket = await Ticket.create({
-      name,
+      title,
       description,
       difficultyLevel,
       gifUrl,
