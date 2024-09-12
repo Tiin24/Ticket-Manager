@@ -19,8 +19,8 @@ export const Ticket = sequelize.define("Ticket", {
     allowNull: false,
   },
   status: {
-    type: DataTypes.ENUM("completado", "incompleto"),
+    type: DataTypes.ENUM("open", "in_progres","closed"),
     allowNull: false,
-    defaultValue: "incompleto",
+    defaultValue: "open",
   },
 });
