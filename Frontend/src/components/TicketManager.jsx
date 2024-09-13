@@ -27,7 +27,7 @@ function TicketManagement() {
 
   const [startIndex, setStartIndex] = useState(0);
   const [endIndex, setEndIndex] = useState(itemsPerPage);
-  const [selectedTicket, setSelectedTicket] = useState(null); // Define setSelectedTicket
+  const [selectedTicket, setSelectedTicket] = useState(null);
 
   const filteredTickets = tickets.filter(
     (ticket) =>
@@ -39,7 +39,6 @@ function TicketManagement() {
   const totalPages = Math.ceil(totalItems / itemsPerPage);
 
   useEffect(() => {
-    // Update the filtered tickets when the page changes
     const startIndex = (currentPage - 1) * itemsPerPage;
     const endIndex = Math.min(startIndex + itemsPerPage, totalItems);
     setStartIndex(startIndex);
@@ -54,7 +53,7 @@ function TicketManagement() {
   return (
     <>
       <div
-        className={`flex gap-4 mb-6 ${darkMode ? "bg-gray-900" : "bg-white"}`}
+        className={`flex gap-4 mb-6 ${darkMode ? "bg-gray-900" : "bg-slate-100"}`}
       >
         <FilterBar
           searchTerm={searchTerm}
@@ -69,7 +68,7 @@ function TicketManagement() {
       </div>
       <TicketTable
         tickets={filteredTickets.slice(startIndex, endIndex)}
-        onViewDetails={setSelectedTicket} // Pass setSelectedTicket here
+        onViewDetails={setSelectedTicket}
       />
       <Pagination
         currentPage={currentPage}

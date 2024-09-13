@@ -18,25 +18,32 @@ function FilterBar({
   difficultyFilter,
   setDifficultyFilter,
   order,
-  setOrder
+  setOrder,
 }) {
   const { darkMode } = useTheme();
 
   return (
-    <div className={`flex gap-4 mb-6 ${darkMode ? "bg-gray-900" : "bg-white"}`}>
+    <div
+      className={`flex gap-4 mb-6 ${darkMode ? "bg-gray-900" : "bg-slate-100"}`}
+    >
       <Input
-        id='search'
+        id="search"
         placeholder="Search tickets..."
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
-        className="max-w-sm"
+        className={`max-w-sm ${darkMode ? "bg-gray-800" : "bg-white"}`}
       />
 
       <Select value={statusFilter} onValueChange={setStatusFilter}>
-        <SelectTrigger className="w-[180px]">
-          <SelectValue placeholder="Filter by status" />
+        <SelectTrigger
+          className={`w-[180px] ${darkMode ? "bg-gray-800" : "bg-white"}`}
+        >
+          <SelectValue
+            className={`${darkMode ? "bg-gray-800" : "bg-white"}`}
+            placeholder="Filter by status"
+          />
         </SelectTrigger>
-        <SelectContent>
+        <SelectContent className={`${darkMode ? "bg-gray-800" : "bg-white"}`}>
           <SelectItem value="all">All Status</SelectItem>
           <SelectItem value="open">Open</SelectItem>
           <SelectItem value="in_progres">In Progress</SelectItem>
@@ -45,10 +52,15 @@ function FilterBar({
       </Select>
 
       <Select value={difficultyFilter} onValueChange={setDifficultyFilter}>
-        <SelectTrigger className="w-[180px]">
-          <SelectValue placeholder="Filter by difficulty" />
+        <SelectTrigger
+          className={`w-[180px] ${darkMode ? "bg-gray-800" : "bg-white"}`}
+        >
+          <SelectValue
+            className={`${darkMode ? "bg-gray-800" : "bg-white"}`}
+            placeholder="Filter by difficulty"
+          />
         </SelectTrigger>
-        <SelectContent>
+        <SelectContent className={`${darkMode ? "bg-gray-800" : "bg-white"}`}>
           <SelectItem value="all">All Dificult</SelectItem>
           <SelectItem value="facil">Facil</SelectItem>
           <SelectItem value="medio">Medio</SelectItem>
@@ -57,10 +69,15 @@ function FilterBar({
       </Select>
 
       <Select value={order} onValueChange={setOrder}>
-        <SelectTrigger className="w-[180px]">
-          <SelectValue placeholder="Sort order" />
+        <SelectTrigger
+          className={`w-[180px] ${darkMode ? "bg-gray-800" : "bg-white"}`}
+        >
+          <SelectValue
+            className={`${darkMode ? "bg-gray-800" : "bg-white"}`}
+            placeholder="Filter by difficulty"
+          />
         </SelectTrigger>
-        <SelectContent>
+        <SelectContent className={`${darkMode ? "bg-gray-800" : "bg-white"}`}>
           <SelectItem value="ASC">ASC</SelectItem>
           <SelectItem value="DESC">DESC</SelectItem>
         </SelectContent>

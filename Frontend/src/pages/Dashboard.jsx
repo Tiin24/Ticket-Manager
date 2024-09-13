@@ -3,13 +3,14 @@ import Sidebar from "../components/Sidebar";
 import TicketManagement from "../components/TicketManager";
 import { useTheme } from "../context/ThemeContext";
 import { Toaster } from "react-hot-toast";
+import DashboardOverview from "../components/DashboardOverview";
 function Dashboard() {
   const [activeTab, setActiveTab] = useState("dashboard");
   const { darkMode } = useTheme();
   return (
     <div
       className={`flex h-screen bg-gray-100 ${
-        darkMode ? "bg-gray-900" : "bg-white"
+        darkMode ? "bg-gray-900" : "bg-slate-100"
       }`}
     >
       <Sidebar activeTab={activeTab} setActiveTab={setActiveTab} />
@@ -22,6 +23,7 @@ function Dashboard() {
           {activeTab === "help" && "Help & Support"}
         </h1>
 
+        {activeTab === "dashboard" && <DashboardOverview />}
         {activeTab === "tickets" && <TicketManagement />}
       </main>
     </div>

@@ -15,7 +15,6 @@ const useTicketStore = create((set) => ({
       );
       const data = await response.json();
 
-      // Guardar los tickets en el estado
       set({ tickets: data });
     } catch (error) {
       console.log("Error fetching Tickets", error);
@@ -60,7 +59,6 @@ const useTicketStore = create((set) => ({
 
       const newTicket = await response.json();
 
-      // Actualizar el ticket en el estado
       set((state) => ({
         tickets: state.tickets.map((ticket) =>
           ticket.id === newTicket.id ? newTicket : ticket

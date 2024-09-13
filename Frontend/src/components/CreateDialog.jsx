@@ -1,6 +1,6 @@
 import { Plus } from "lucide-react";
 import { useState } from "react";
-import useStore from "../store/useTickets"; // Importa tu store
+import useStore from "../store/useTickets";
 import {
   Dialog,
   DialogContent,
