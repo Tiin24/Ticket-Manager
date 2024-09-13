@@ -1,5 +1,8 @@
 /* eslint-disable react/prop-types */
 import { Button } from "./ui/button";
+import { Textarea } from "./ui/textarea";
+import { Label } from "./ui/label";
+import { Input } from "./ui/input";
 import {
   Dialog,
   DialogContent,
@@ -8,81 +11,97 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "./ui/dialog";
-import { Input } from "./ui/input";
-import { Label } from "./ui/label";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "./ui/select";
+
 
 function TicketDialog({ ticket, onViewDetails }) {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button
-          size="sm"
-          onClick={() => onViewDetails(ticket)}
-        >
+        <Button size="sm" onClick={() => onViewDetails(ticket)}>
           View Details
         </Button>
       </DialogTrigger>
-      <DialogContent className="sm:max-w-[425px]">
+      <DialogContent>
         <DialogHeader>
-          <DialogTitle>Ticket Details</DialogTitle>
+          <DialogTitle>Detalles del Ticket</DialogTitle>
           <DialogDescription>
-            View and manage ticket information
+            Consulta la información del ticket a continuación.
           </DialogDescription>
         </DialogHeader>
+
         {ticket && (
-          <div className="grid gap-4 py-4">
-            <div className="grid grid-cols-4 items-center gap-4">
-              <Label htmlFor="title" className="text-right">
-                Title
+          <div className="space-y-4">
+            <div>
+              <Label
+                htmlFor="title"
+                className="block text-sm font-medium text-gray-700"
+              >
+                Título
               </Label>
               <Input
                 id="title"
                 value={ticket.title}
-                className="col-span-3"
+                className="focus:outline-none focus:ring-0 focus:border-gray-300"
                 readOnly
               />
             </div>
-            <div className="grid grid-cols-4 items-center gap-4">
-              <Label htmlFor="status" className="text-right">
-                Status
+
+            <div>
+              <Label
+                htmlFor="status"
+                className="block text-sm font-medium text-gray-700"
+              >
+                Estado
               </Label>
-              <Select defaultValue={ticket.status}>
-                <SelectTrigger className="w-[180px]">
-                  <SelectValue placeholder="Change status" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="open">Open</SelectItem>
-                  <SelectItem value="in_progress">In Progress</SelectItem>
-                  <SelectItem value="closed">Closed</SelectItem>
-                </SelectContent>
-              </Select>
+              <Input
+                id="status"
+                value={ticket.status.replace("_", " ")}
+                className="focus:outline-none focus:ring-0 focus:border-gray-300"
+                readOnly
+              />
             </div>
-            <div className="grid grid-cols-4 items-center gap-4">
-              <Label htmlFor="priority" className="text-right">
-                Difficulty
+
+            <div>
+              <Label
+                htmlFor="priority"
+                className="block text-sm font-medium text-gray-700"
+              >
+                Nivel de Dificultad
               </Label>
               <Input
                 id="priority"
                 value={ticket.difficultyLevel}
-                className="col-span-3"
+                className="focus:outline-none focus:ring-0 focus:border-gray-300"
                 readOnly
               />
             </div>
-            <div className="grid grid-cols-4 items-center gap-4">
-              <Label htmlFor="created" className="text-right">
-                Created At
+
+            <div>
+              <Label
+                htmlFor="description"
+                className="block text-sm font-medium text-gray-700"
+              >
+                Descripción
+              </Label>
+              <Textarea
+                id="description"
+                value={ticket.description}
+                className="focus:outline-none focus:ring-0 focus:border-gray-300"
+                readOnly
+              />
+            </div>
+
+            <div>
+              <Label
+                htmlFor="created"
+                className="block text-sm font-medium text-gray-700"
+              >
+                Creado el
               </Label>
               <Input
                 id="created"
                 value={ticket.createdAt}
-                className="col-span-3"
+                className="focus:outline-none focus:ring-0 focus:border-gray-300"
                 readOnly
               />
             </div>

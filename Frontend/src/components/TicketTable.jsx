@@ -10,8 +10,8 @@ import {
 } from "./ui/table";
 import TicketDialog from "./TicketDialog";
 import DeleteDialog from "./DeleteDialog";
-import { Pencil } from "lucide-react";
 import { useTheme } from "../context/ThemeContext";
+import EditDialog from "./EditDialog";
 
 const statusClasses = {
   open: "bg-green-100 text-green-800 border-green-300",
@@ -23,11 +23,11 @@ function TicketTable({ tickets, onViewDetails }) {
   const { darkMode } = useTheme();
   return (
     <div
-      className={`bg-white shadow-md rounded-lg overflow-hidden ${
+      className={`shadow-md rounded-lg overflow-hidden ${
         darkMode ? "bg-gray-800" : "bg-white"
       }`}
     >
-      <Table >
+      <Table>
         <TableHeader>
           <TableRow>
             <TableHead>ID</TableHead>
@@ -64,10 +64,10 @@ function TicketTable({ tickets, onViewDetails }) {
                 <TicketDialog ticket={ticket} onViewDetails={onViewDetails} />
               </TableCell>
               <TableCell>
-                <Pencil size={16} />
+                <EditDialog ticketId={ticket.id} />
               </TableCell>
               <TableCell>
-                <DeleteDialog />
+                <DeleteDialog ticketId={ticket.id} />
               </TableCell>
             </TableRow>
           ))}

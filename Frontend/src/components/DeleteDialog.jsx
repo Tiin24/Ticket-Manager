@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import {
   Dialog,
   DialogContent,
@@ -9,17 +10,28 @@ import {
 import { Button } from "./ui/button";
 import { Trash2 } from "lucide-react";
 import { useState } from "react";
+import useTicketStore from "../store/useTickets";
+import toast from "react-hot-toast";
 
-function DeleteDialog() {
+function DeleteDialog({ ticketId }) {
   const [open, setOpen] = useState(false);
+  const deleteTicket = useTicketStore((state) => state.deleteTicket);
 
-  const handleDelete = () => {
-    setOpen(false); // Cierra el diálogo después de eliminar
+  const handleDelete = async () => {
+    try {
+      await deleteTicket(ticketId);
+
+      toast.success("elemento eliminado");
+      setOpen(false);
+    } catch (error) {
+      toast.error(error);
+    }
   };
+
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
-        <Button className="hover:bg-red-100">
+        <Button variant="ghost">
           <Trash2 color="red" size={16} />
         </Button>
       </DialogTrigger>
@@ -31,20 +43,10 @@ function DeleteDialog() {
           </DialogDescription>
         </DialogHeader>
         <div className="flex justify-end gap-2">
-          <Button
-            variant="outline"
-            onClick={() => {
-              handleDelete();
-            }}
-          >
+          <Button variant="outline" onClick={() => setOpen(false)}>
             Cancelar
           </Button>
-          <Button
-            variant="destructive"
-            onClick={() => {
-              handleDelete();
-            }}
-          >
+          <Button variant="destructive" onClick={handleDelete}>
             Eliminar
           </Button>
         </div>
