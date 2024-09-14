@@ -1,4 +1,4 @@
-import { Button } from "./ui/button";
+import LoginButton from "./LoginButton";
 
 function HeroSection() {
   return (
@@ -15,13 +15,7 @@ function HeroSection() {
             </p>
           </div>
           <div className="space-x-4">
-            <Button
-              variant="outline"
-              className="bg-white text-purple-600 hover:bg-gray-100"
-              size="lg"
-            >
-              Iniciar sesión
-            </Button>
+            <LoginButton/>
           </div>
         </div>
       </div>
