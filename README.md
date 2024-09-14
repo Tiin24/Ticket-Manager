@@ -1,5 +1,5 @@
 <div align="center">
-  <h1>🤖 Proyecto | No Country 💻</h1>
+  <h1>🤖 Proyecto | Ticket-Manager 💻</h1>
 </div>
 
 ## 📕 Descripción del proyecto
