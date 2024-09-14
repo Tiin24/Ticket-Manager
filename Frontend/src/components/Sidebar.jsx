@@ -5,11 +5,11 @@ import {
   Home,
   Settings,
   HelpCircle,
-  LogOut,
   Sun,
   Moon,
 } from "lucide-react";
 import { useTheme } from "../context/ThemeContext";
+import LogoutButton from "./LogoutButton";
 
 export default function Sidebar({ activeTab, setActiveTab }) {
   const { darkMode, toggleDarkMode } = useTheme(); 
@@ -80,10 +80,7 @@ export default function Sidebar({ activeTab, setActiveTab }) {
         </nav>
       </div>
       <div className="absolute bottom-4 left-4">
-        <Button variant="ghost" className="w-full justify-start text-red-600">
-          <LogOut className="mr-2 h-4 w-4" />
-          Logout
-        </Button>
+        <LogoutButton/>
       </div>
     </aside>
   );
