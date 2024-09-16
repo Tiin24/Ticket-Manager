@@ -27,7 +27,7 @@ Esta aplicación permite a los usuarios crear, modificar y eliminar tickets con 
 
 1. Clonar el repositorio:
    ```bash
-   git clone https://github.com/tu-usuario/nombre-del-repositorio.git
+   git clone https://github.com/Tiin24/Ticket-Manager.git
    cd nombre-del-repositorio
 2. Instalar dependencias tanto en el backend como en el frontend:
     ```bash
@@ -37,7 +37,7 @@ Esta aplicación permite a los usuarios crear, modificar y eliminar tickets con 
     npm install
 3. Configurar las variables de entorno: Crear un archivo .env en el directorio del backend y agregar las siguientes variables:
     ```bash
-    GIPHY_API_KEY=tu_clave_de_api_de_giphy
+    GIPHY_API_KEY=mgzq8yKkjSSpUNpMaS6Mf3I8J7rOY6rj
     DATABASE_URL=tu_url_de_base_de_datos
 4. Correr la aplicación:
 - **Iniciar backend**
