@@ -15,7 +15,7 @@ createRoot(document.getElementById("root")).render(
           domain="dev-3151lg3cezjv8mhv.us.auth0.com"
           clientId="hIWfEpf4cGx14yNYxhSRIOQWjfhU4vM7"
           authorizationParams={{
-            redirect_uri: 'https://ticket-manager-sandy.vercel.app/',
+            redirect_uri: window.location.origin,
           }}
         >
           <App />
