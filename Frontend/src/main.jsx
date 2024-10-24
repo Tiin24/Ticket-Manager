@@ -15,15 +15,14 @@ createRoot(document.getElementById("root")).render(
     <BrowserRouter>
       <ThemeProvider>
         <Auth0Provider
-          domain={domain}
-          clientId={clientId}
+          domain="dev-3151lg3cezjv8mhv.us.auth0.com"
+          clientId="hIWfEpf4cGx14yNYxhSRIOQWjfhU4vM7"
           authorizationParams={{
             redirect_uri: window.location.origin,
           }}
         >
           <App />
         </Auth0Provider>
-        ,
       </ThemeProvider>
     </BrowserRouter>
   </StrictMode>
