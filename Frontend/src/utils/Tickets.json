@@ -6,16 +6,16 @@
     "status": "open",
     "difficulty": "medium",
     "createdAt": "2023-06-01",
-    "gifturl": "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZGx6ZGt2cWt5c3pzd2thMWRzMmoxazhuaWVhbW85ZTJ6MjMwenU3diZlcD12MV9naWZzX3RyZW5kaW5nJmN0PWc/LzwcNOrbA3aYvXK6r7/giphy.gif"
+    "gifUrl": "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZGx6ZGt2cWt5c3pzd2thMWRzMmoxazhuaWVhbW85ZTJ6MjMwenU3diZlcD12MV9naWZzX3RyZW5kaW5nJmN0PWc/LzwcNOrbA3aYvXK6r7/giphy.gif"
   },
   {
     "id": 2,
     "title": "App Crash",
     "description": "App crashes on startup for iOS users",
-    "status": "in_progress",
+    "status": "in_progres",
     "difficulty": "hard",
     "createdAt": "2023-06-02",
-    "gifturl": "https://media1.giphy.com/media/A9MftKr3J3lra/giphy.gif?cid=5911ec141k1bb408gie2g4b476hqkubkd92k341p7fs3m001&ep=v1_gifs_search&rid=giphy.gif&ct=g"
+    "gifUrl": "https://media1.giphy.com/media/A9MftKr3J3lra/giphy.gif?cid=5911ec141k1bb408gie2g4b476hqkubkd92k341p7fs3m001&ep=v1_gifs_search&rid=giphy.gif&ct=g"
   },
   {
     "id": 3,
@@ -24,7 +24,7 @@
     "status": "closed",
     "difficulty": "easy",
     "createdAt": "2023-06-03",
-    "gifturl": "https://media1.giphy.com/media/A9MftKr3J3lra/giphy.gif?cid=5911ec141k1bb408gie2g4b476hqkubkd92k341p7fs3m001&ep=v1_gifs_search&rid=giphy.gif&ct=g"
+    "gifUrl": "https://media1.giphy.com/media/A9MftKr3J3lra/giphy.gif?cid=5911ec141k1bb408gie2g4b476hqkubkd92k341p7fs3m001&ep=v1_gifs_search&rid=giphy.gif&ct=g"
   },
   {
     "id": 4,
@@ -33,15 +33,15 @@
     "status": "open",
     "difficulty": "hard",
     "createdAt": "2023-06-04",
-    "gifturl": "https://media1.giphy.com/media/A9MftKr3J3lra/giphy.gif?cid=5911ec141k1bb408gie2g4b476hqkubkd92k341p7fs3m001&ep=v1_gifs_search&rid=giphy.gif&ct=g"
+    "gifUrl": "https://media1.giphy.com/media/A9MftKr3J3lra/giphy.gif?cid=5911ec141k1bb408gie2g4b476hqkubkd92k341p7fs3m001&ep=v1_gifs_search&rid=giphy.gif&ct=g"
   },
   {
     "id": 5,
     "title": "404 Error",
     "description": "Product page not found",
-    "status": "in_progress",
+    "status": "in_progres",
     "difficulty": "medium",
     "createdAt": "2023-06-05",
-    "gifturl": "https://media1.giphy.com/media/A9MftKr3J3lra/giphy.gif?cid=5911ec141k1bb408gie2g4b476hqkubkd92k341p7fs3m001&ep=v1_gifs_search&rid=giphy.gif&ct=g"
+    "gifUrl": "https://media1.giphy.com/media/A9MftKr3J3lra/giphy.gif?cid=5911ec141k1bb408gie2g4b476hqkubkd92k341p7fs3m001&ep=v1_gifs_search&rid=giphy.gif&ct=g"
   }
 ]

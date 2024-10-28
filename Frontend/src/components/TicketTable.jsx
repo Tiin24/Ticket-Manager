@@ -12,6 +12,7 @@ import TicketDialog from "./TicketDialog";
 import DeleteDialog from "./DeleteDialog";
 import { useTheme } from "../context/ThemeContext";
 import EditDialog from "./EditDialog";
+import data from '../utils/Tickets.json'
 
 const statusClasses = {
   open: "bg-green-100 text-green-800 border-green-300",
@@ -19,7 +20,9 @@ const statusClasses = {
   closed: "bg-red-100 text-red-800 border-red-300",
 };
 
-function TicketTable({ tickets, onViewDetails }) {
+function TicketTable({ 
+  // tickets, 
+  onViewDetails }) {
   const { darkMode } = useTheme();
   return (
     <div
@@ -41,7 +44,7 @@ function TicketTable({ tickets, onViewDetails }) {
           </TableRow>
         </TableHeader>
         <TableBody>
-          {tickets.map((ticket) => (
+          {data.map((ticket) => (
             <TableRow key={ticket.id}>
               <TableCell>{ticket.id}</TableCell>
               <TableCell>{ticket.title}</TableCell>
