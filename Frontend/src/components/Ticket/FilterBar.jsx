@@ -1,14 +1,14 @@
 /* eslint-disable react/prop-types */
-import { Input } from "./ui/input";
+import { Input } from "../ui/input";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "./ui/select";
+} from "../ui/select";
 import CreateDialog from "./CreateDialog";
-import { useTheme } from "../context/ThemeContext";
+import { useTheme } from "../../context/ThemeContext";
 
 function FilterBar({
   searchTerm,

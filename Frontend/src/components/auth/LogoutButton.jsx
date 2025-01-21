@@ -1,8 +1,8 @@
-import { Button } from "./ui/button";
+import { Button } from "../ui/button";
 import { LogOut } from "lucide-react";
 import { Link } from "react-router-dom";
 
-const LogoutButton = () => {
+function LogoutButton() {
   return (
     <Link to={"/"}>
       <Button variant="ghost" className="w-full justify-start text-red-600">
@@ -11,6 +11,6 @@ const LogoutButton = () => {
       </Button>
     </Link>
   );
-};
+}
 
 export default LogoutButton;

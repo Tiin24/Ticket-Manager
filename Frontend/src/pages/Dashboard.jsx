@@ -1,9 +1,9 @@
 import { useState } from "react";
-import Sidebar from "../components/Sidebar";
-import TicketManagement from "../components/TicketManager";
 import { useTheme } from "../context/ThemeContext";
 import { Toaster } from "react-hot-toast";
-import DashboardOverview from "../components/DashboardOverview";
+import Sidebar from "../components/Dashboard/Sidebar";
+import DashboardOverview from "../components/Dashboard/DashboardOverview";
+import TicketManagement from "../components/Dashboard/TicketManager";
 
 function Dashboard() {
   const [activeTab, setActiveTab] = useState("dashboard");

@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { Badge } from "./ui/badge";
+import { Badge } from "../ui/badge";
 import {
   Table,
   TableBody,
@@ -7,12 +7,12 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "./ui/table";
+} from "../ui/table";
 import TicketDialog from "./TicketDialog";
 import DeleteDialog from "./DeleteDialog";
-import { useTheme } from "../context/ThemeContext";
+import { useTheme } from "../../context/ThemeContext";
 import EditDialog from "./EditDialog";
-import data from '../utils/Tickets.json'
+// import data from '../../utils/Tickets.json'
 
 const statusClasses = {
   open: "bg-green-100 text-green-800 border-green-300",
@@ -21,7 +21,7 @@ const statusClasses = {
 };
 
 function TicketTable({ 
-  // tickets, 
+  tickets, 
   onViewDetails }) {
   const { darkMode } = useTheme();
   return (
@@ -44,7 +44,7 @@ function TicketTable({
           </TableRow>
         </TableHeader>
         <TableBody>
-          {data.map((ticket) => (
+          {tickets.map((ticket) => (
             <TableRow key={ticket.id}>
               <TableCell>{ticket.id}</TableCell>
               <TableCell>{ticket.title}</TableCell>

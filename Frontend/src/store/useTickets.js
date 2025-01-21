@@ -1,5 +1,7 @@
 import { create } from "zustand";
 
+const url_base = import.meta.env.VITE_APP_API_URL;
+
 const useTicketStore = create((set) => ({
   tickets: [],
   fetchTickets: async (order = "ASC", status = "", difficultyLevel = "") => {
@@ -11,7 +13,7 @@ const useTicketStore = create((set) => ({
       }).toString();
 
       const response = await fetch(
-        `http://localhost:4000/tickets?${queryParams}`
+        `${url_base}/tickets?${queryParams}`
       );
       const data = await response.json();
 
@@ -23,7 +25,7 @@ const useTicketStore = create((set) => ({
 
   addTicket: async (newTicket) => {
     try {
-      const response = await fetch("http://localhost:4000/tickets", {
+      const response = await fetch(`${url_base}/tickets`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -44,7 +46,7 @@ const useTicketStore = create((set) => ({
   updateTicket: async (updatedTicket) => {
     try {
       const response = await fetch(
-        `http://localhost:4000/tickets/${updatedTicket.id}`,
+        `${url_base}/tickets/${updatedTicket.id}`,
         {
           method: "PUT",
           headers: {
@@ -70,7 +72,7 @@ const useTicketStore = create((set) => ({
   },
   deleteTicket: async(ticketId) => {
     try {
-      const response = await fetch(`http://localhost:4000/tickets/${ticketId}`,{
+      const response = await fetch(`${url_base}/tickets/${ticketId}`,{
         method: "DELETE",
       })
       if (!response.ok) {

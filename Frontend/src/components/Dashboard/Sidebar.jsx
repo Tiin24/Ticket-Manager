@@ -8,8 +8,8 @@ import {
   Sun,
   Moon,
 } from "lucide-react";
-import { useTheme } from "../context/ThemeContext";
-import LogoutButton from "./LogoutButton";
+import { useTheme } from "../../context/ThemeContext";
+import LogoutButton from "../auth/LogoutButton";
 
 export default function Sidebar({ activeTab, setActiveTab }) {
   const { darkMode, toggleDarkMode } = useTheme(); 

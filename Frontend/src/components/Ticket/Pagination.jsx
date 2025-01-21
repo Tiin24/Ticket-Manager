@@ -7,7 +7,7 @@ import {
   ChevronsRight,
 } from "lucide-react";
 
-export default function Pagination({
+function Pagination({
   currentPage,
   totalPages,
   goToPage,
@@ -61,3 +61,5 @@ export default function Pagination({
     </div>
   );
 }
+
+export default Pagination;

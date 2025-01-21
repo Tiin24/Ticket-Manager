@@ -1,10 +1,10 @@
 /* eslint-disable no-unused-vars */
-import FilterBar from "./FilterBar";
 import { useEffect, useState } from "react";
-import TicketTable from "./TicketTable";
-import useTicketStore from "../store/useTickets";
-import { useTheme } from "../context/ThemeContext";
-import Pagination from "./Pagination";
+import useTicketStore from "../../store/useTickets";
+import { useTheme } from "../../context/ThemeContext";
+import FilterBar from "../Ticket/FilterBar";
+import TicketTable from "../Ticket/TicketTable";
+import Pagination from "../Ticket/Pagination";
 
 function TicketManagement() {
   const { darkMode } = useTheme();

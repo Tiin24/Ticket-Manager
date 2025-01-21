@@ -1,4 +1,5 @@
-import LoginButton from "./LoginButton";
+import LoginButton from "../auth/LoginButton";
+
 
 function HeroSection() {
   return (

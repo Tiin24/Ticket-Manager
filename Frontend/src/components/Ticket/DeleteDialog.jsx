@@ -6,11 +6,11 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "./ui/dialog";
-import { Button } from "./ui/button";
+} from "../ui/dialog";
+import { Button } from "../ui/button";
 import { Trash2 } from "lucide-react";
 import { useState } from "react";
-import useTicketStore from "../store/useTickets";
+import useTicketStore from "../../store/useTickets";
 import toast from "react-hot-toast";
 
 function DeleteDialog({ ticketId }) {
